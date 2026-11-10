@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Usage Tracker</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 24px 18px 60px;
+      color: #1f2328;
+      line-height: 1.6;
+      background: #fff;
+    }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { margin-top: 36px; font-size: 20px; }
+    .meta { color: #6e7781; font-size: 14px; margin-bottom: 24px; }
+    .badge {
+      display: inline-block; padding: 4px 10px; background: #eef2ff;
+      color: #1e3a8a; border-radius: 6px; font-size: 12px; font-weight: 600;
+      margin-right: 6px;
+    }
+    a { color: #1d4ed8; }
+    hr { border: 0; border-top: 1px solid #e6e8eb; margin: 32px 0; }
+    .footer { color: #6e7781; font-size: 13px; margin-top: 40px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 4px; }
+    code { background: #f6f8fa; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>Privacy Policy</h1>
+  <div class="meta">
+    <span class="badge">App: Usage Tracker</span>
+    <span class="badge">Developer: Novarush</span>
+    <span class="badge">Last updated: November 9, 2026</span>
+  </div>
+
+  <p>
+    This Privacy Policy describes how <strong>Usage Tracker</strong> ("the app",
+    "we", "us") handles information when you install and use the app on your
+    Android device. By using the app, you agree to the practices described here.
+  </p>
+
+  <h2>1. The short version</h2>
+  <ul>
+    <li><strong>The app itself does not transmit any of your usage data off your device.</strong> All app-usage statistics, focus-session history, blocked-app lists, and daily limits are stored locally on your device in on-device databases.</li>
+    <li><strong>The app shows ads served by Google AdMob.</strong> AdMob and its certified partners may collect device identifiers and ad-interaction data to serve and measure ads, as described in Google's privacy policy.</li>
+    <li><strong>The app does not require you to create an account</strong>, and no email, name, or password is collected.</li>
+  </ul>
+
+  <h2>2. Information collected by the app itself</h2>
+  <p>
+    Usage Tracker reads on-device usage statistics via Android's <code>UsageStatsManager</code>
+    API to display per-app screen time, daily totals, weekly history, and trends.
+    This data is:
+  </p>
+  <ul>
+    <li>Read from the device's system usage database (you grant this explicitly via <em>Settings → Apps → Special access → Usage access</em>);</li>
+    <li>Stored only in on-device storage (Room database + DataStore preferences);</li>
+    <li>Never uploaded, synced, or transmitted off the device;</li>
+    <li>Wiped completely if you uninstall the app or use the "Clear all data" option in the app's Settings.</li>
+  </ul>
+
+  <h2>3. Permissions the app requests and why</h2>
+  <table style="width:100%; border-collapse: collapse; margin: 12px 0;">
+    <thead>
+      <tr style="background:#f6f8fa; text-align:left;">
+        <th style="padding:8px; border:1px solid #e6e8eb;">Permission</th>
+        <th style="padding:8px; border:1px solid #e6e8eb;">Why we need it</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:8px; border:1px solid #e6e8eb;"><code>PACKAGE_USAGE_STATS</code></td>
+        <td style="padding:8px; border:1px solid #e6e8eb;">Core feature. Read per-app usage time to show on the dashboard and in history charts.</td>
+      </tr>
+      <tr>
+        <td style="padding:8px; border:1px solid #e6e8eb;"><code>SYSTEM_ALERT_WINDOW</code></td>
+        <td style="padding:8px; border:1px solid #e6e8eb;">The blocker feature draws a "stay focused" overlay over user-selected apps.</td>
+      </tr>
+      <tr>
+        <td style="padding:8px; border:1px solid #e6e8eb;"><code>FOREGROUND_SERVICE</code> + <code>FOREGROUND_SERVICE_SPECIAL_USE</code></td>
+        <td style="padding:8px; border:1px solid #e6e8eb;">Keeps the blocker overlay alive while you switch apps. Subtype: "App blocker overlay".</td>
+      </tr>
+      <tr>
+        <td style="padding:8px; border:1px solid #e6e8eb;"><code>POST_NOTIFICATIONS</code></td>
+        <td style="padding:8px; border:1px solid #e6e8eb;">Show optional reminders (e.g. daily limit reached).</td>
+      </tr>
+      <tr>
+        <td style="padding:8px; border:1px solid #e6e8eb;"><code>RECEIVE_BOOT_COMPLETED</code></td>
+        <td style="padding:8px; border:1px solid #e6e8eb;">Restart the blocker service after device reboot.</td>
+      </tr>
+      <tr>
+        <td style="padding:8px; border:1px solid #e6e8eb;"><code>ACCESS_NOTIFICATION_POLICY</code></td>
+        <td style="padding:8px; border:1px solid #e6e8eb;">Optional Do-Not-Disturb toggle during focus sessions (off by default).</td>
+      </tr>
+      <tr>
+        <td style="padding:8px; border:1px solid #e6e8eb;"><code>INTERNET</code> + <code>ACCESS_NETWORK_STATE</code></td>
+        <td style="padding:8px; border:1px solid #e6e8eb;">Required by AdMob to fetch and display ads.</td>
+      </tr>
+      <tr>
+        <td style="padding:8px; border:1px solid #e6e8eb;"><code>com.google.android.gms.permission.AD_ID</code></td>
+        <td style="padding:8px; border:1px solid #e6e8eb;">Required by AdMob to deliver personalized ads. The Advertising ID may be reset in Android Settings → Privacy → Ads.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>4. Third-party services: Google AdMob</h2>
+  <p>
+    The app displays ads using the Google Mobile Ads SDK (AdMob). When the app
+    shows an ad, Google and its certified partners may collect or receive the
+    following information:
+  </p>
+  <ul>
+    <li>Device identifiers (Advertising ID, limited-advertising-identifier signals);</li>
+    <li>Approximate device location (country-level, derived from IP);</li>
+    <li>App-interaction data (when an ad was shown, clicked, or dismissed);</li>
+    <li>Basic device information (model, OS version, screen size, language).</li>
+  </ul>
+  <p>
+    This information is governed by Google's Privacy Policy and the Google
+    Publisher Policies, available at:
+  </p>
+  <ul>
+    <li><a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
+    <li><a href="https://support.google.com/admob/answer/6128543">How Google uses information from sites or apps that use its services</a></li>
+  </ul>
+  <p>
+    You can opt out of personalized ads by resetting your Advertising ID or
+    toggling "Opt out of personalization" in Android Settings → Privacy → Ads.
+    Even with personalization off, you will still see ads, but they will not
+    be based on your interests.
+  </p>
+
+  <h2>5. Children's privacy</h2>
+  <p>
+    The app is rated "Everyone" (3+). It is not directed at children under 13,
+    and we do not knowingly collect personal information from children. If you
+    believe a child has provided us with personal information, please contact
+    us so we can delete it.
+  </p>
+
+  <h2>6. Data retention</h2>
+  <ul>
+    <li>On-device usage data: kept locally until you uninstall the app or use "Clear all data" in Settings.</li>
+    <li>Ad-interaction data collected by Google AdMob is retained per Google's own retention policy; we have no access to it.</li>
+  </ul>
+
+  <h2>7. Your rights</h2>
+  <p>You can, at any time:</p>
+  <ul>
+    <li>Withdraw any of the runtime permissions in Android Settings → Apps → Usage Tracker → Permissions;</li>
+    <li>Reset your Advertising ID in Android Settings → Privacy → Ads → Reset advertising ID;</li>
+    <li>Clear all data the app holds by tapping "Clear all data" in the app's Settings, or by uninstalling the app.</li>
+  </ul>
+
+  <h2>8. Changes to this policy</h2>
+  <p>
+    We may update this policy from time to time. The "Last updated" date at the
+    top of this page will reflect the most recent revision. Material changes
+    will be highlighted in the app's next Play Store release notes.
+  </p>
+
+  <h2>9. Contact</h2>
+  <p>
+    For any questions about this Privacy Policy, write to:
+    <a href="mailto:novarush.dev@gmail.com">novarush.dev@gmail.com</a>
+  </p>
+
+  <hr>
+  <div class="footer">
+    ads.txt for this site is available at
+    <a href="/ads.txt">/ads.txt</a>.
+  </div>
+</body>
+</html>
